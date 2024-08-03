@@ -259,6 +259,8 @@ Rails.application.routes.draw do
           end
 
           resources :upload, only: [:create]
+
+          resources :chatbots, only: [:index, :show, :update, :create, :destroy]
         end
       end
       # end of account scoped api routes

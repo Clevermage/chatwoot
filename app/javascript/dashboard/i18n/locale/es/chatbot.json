@@ -1,0 +1,12 @@
+{
+    "CHATBOT_SETTINGS": {
+        "TITLE": "Configuración del chatbot",
+        "FORM_GENERAL_SECTION_TITLE": "Ajustes Chatbot",
+        "FORM_STATUS_LABEL": "Activar / Desactivar Chatbot",
+        "FORM_PROMPT_LABEL": "Prompt",
+        "FORM_PROMPT_PLACEHOLDER": "Prompt principal",
+        "FORM_EMAIL_LABEL": "Email",
+        "FORM_EMAIL_PLACEHOLDER": "Email para recibir notificaciones",
+        "FORM_QR_PLACEHOLDER": "Vincular el chatbot con WhatsApp"
+    }
+}

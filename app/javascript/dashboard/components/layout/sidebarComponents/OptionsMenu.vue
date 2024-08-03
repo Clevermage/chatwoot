@@ -61,6 +61,25 @@
           </router-link>
         </woot-dropdown-item>
         <woot-dropdown-item>
+          <router-link
+            v-slot="{ href, isActive, navigate }"
+            :to="`/app/accounts/${accountId}/settings/chatbot`"
+            custom
+          >
+            <a
+              :href="href"
+              class="button small clear secondary bg-white dark:bg-slate-800 h-8"
+              :class="{ 'is-active': isActive }"
+              @click="e => handleProfileSettingClick(e, navigate)"
+            >
+              <fluent-icon icon="bot" size="14" class="icon icon--font" />
+              <span class="button__content">
+                {{ $t('SIDEBAR_ITEMS.CHAT_BOT') }}
+              </span>
+            </a>
+          </router-link>
+        </woot-dropdown-item>
+        <woot-dropdown-item>
           <woot-button
             variant="clear"
             color-scheme="secondary"

@@ -29,6 +29,6 @@ class Api::V1::Accounts::ChatbotsController < Api::V1::Accounts::BaseController
   end
 
   def permitted_params
-    params.require(:chatbot).permit(:status, :promts, :qr, :email, :phone, :address, :email, :email_notify)
+    params.require(:chatbot).permit(:status, :promts, :qr, :email_business, :phone, :address, :email_notify)
   end
 end

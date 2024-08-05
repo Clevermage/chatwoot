@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_31_144332) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_04_154109) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -396,7 +396,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_31_144332) do
     t.boolean "status"
     t.text "promts"
     t.string "qr"
-    t.string "email"
+    t.text "email_business"
     t.string "phone"
     t.string "address"
     t.string "email_notify"

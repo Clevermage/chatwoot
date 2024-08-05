@@ -209,7 +209,7 @@ export default {
           status: this.status,
           promts: this.promts,
           qr: this.qr,
-          email: this.email,
+          email_business: this.email_business,
           email_notify: this.email_notify,
         });
         this.$root.$i18n.locale = this.locale;

@@ -37,12 +37,12 @@ export const actions = {
     }
   },
 
-  update: async ({ id, ...chatBotObj }) => {
-    // commit(types.SET_AGENT_BOT_UI_FLAG, { isUpdating: true });
+  update: async ({ commit }, { id, ...chatBotObj }) => {
+    commit(types.SET_CHAT_BOT_UI_FLAG, { isUpdating: true });
     try {
       const response = await ChatbotAPI.update(id, chatBotObj);
-      return response.data;
-      // commit(types.EDIT_AGENT_BOT, response.data);
+      // return response.data;
+      commit(types.EDIT_CHAT_BOT, response.data);
     } catch (error) {
       throwErrorMessage(error);
       throw error;

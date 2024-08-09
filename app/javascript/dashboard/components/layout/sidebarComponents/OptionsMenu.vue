@@ -60,7 +60,7 @@
             </a>
           </router-link>
         </woot-dropdown-item>
-        <woot-dropdown-item>
+        <woot-dropdown-item v-if="currentUser.type === 'SuperAdmin'">
           <router-link
             v-slot="{ href, isActive, navigate }"
             :to="`/app/accounts/${accountId}/settings/chatbot`"

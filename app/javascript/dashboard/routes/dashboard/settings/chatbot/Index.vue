@@ -53,9 +53,7 @@
           </label>
           <div>
             <label>{{ $t('CHATBOT_SETTINGS.FORM_QR_PLACEHOLDER') }}</label>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png"
-            />
+            <img :src="qr" />
           </div>
 
           <div

@@ -1,0 +1,21 @@
+{
+    "CHATBOT_SETTINGS": {
+        "TITLE": "Configuración chatbot",
+        "FORM_GENERAL_SECTION_TITLE": "Ajustes generales Chatbot",
+        "FORM_STATUS_LABEL": "Activar / Desactivar Chatbot",
+        "FORM_PROMPT_LABEL": "Instruciones",
+        "FORM_PROMPT_PLACEHOLDER": "Instruciones",
+        "FORM_EMAIL_LABEL": "Email",
+        "FORM_EMAIL_NOTIFY": "Email para recibir notificaciones",
+        "FORM_EMAIL_PLACEHOLDER": "Email para recibir notificaciones",
+        "FORM_QR_PLACEHOLDER": "Vincular el chatbot con WhatsApp",
+        "DOCUMENT": {
+            "TITLE": "Documentos", 
+            "SUBTITLE_UPLOAD": "Subir documentos",
+            "BUTTON_UPLOAD": "Subir archivo",
+            "PARAGRAPH": "Aquí puedes cargar documentos que ayudarán a que tu chatbot responda mejor a las consultas. Por ejemplo, puedes subir un archivo txt con preguntas frecuentes, horarios, direcciones, teléfonos, o un archivo csv de tu catálogo de productos o servicios. Estos documentos harán que tu chatbot esté bien informado y preparado para interactuar con tus clientes.",
+            "SUBTITLE_LOAD": "Documentos cargados",
+            "ICON_DELETE_FILE": "Eliminar archivo"
+        }
+    }
+}

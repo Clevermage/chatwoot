@@ -49,7 +49,7 @@ export default {
               v-if="globalConfig.logoDark"
               :src="globalConfig.logoDark"
               :alt="globalConfig.installationName"
-              class="hidden w-auto h-8 dark:block"
+              class="hidden w-auto dark:block"
             />
             <h2
               class="mt-6 text-3xl font-medium text-left mb-7 text-slate-900 dark:text-woot-50"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_26_220747) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_01_232522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -392,6 +392,29 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_26_220747) do
     t.jsonb "message_templates", default: {}
     t.datetime "message_templates_last_updated", precision: nil
     t.index ["phone_number"], name: "index_channel_whatsapp_on_phone_number", unique: true
+  end
+
+  create_table "chatbots", force: :cascade do |t|
+    t.boolean "status", default: false, null: false
+    t.text "promts"
+    t.string "qr"
+    t.text "email_business"
+    t.string "phone"
+    t.string "address"
+    t.string "email_notify"
+    t.integer "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name_business"
+    t.bigint "type_chatbot_id"
+    t.json "content"
+    t.string "api_key_content"
+    t.string "openai_assistant_id"
+    t.string "openai_model"
+    t.string "openai_temperature"
+    t.jsonb "actions"
+    t.index ["account_id"], name: "index_chatbots_on_account_id"
+    t.index ["type_chatbot_id"], name: "index_chatbots_on_type_chatbot_id"
   end
 
   create_table "contact_inboxes", force: :cascade do |t|
@@ -940,6 +963,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_26_220747) do
     t.integer "account_id"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+  end
+
+  create_table "type_chatbots", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

@@ -181,6 +181,7 @@
     "CONTACT_SUPPORT": "Contactar con Soporte",
     "SELECTOR_SUBTITLE": "Seleccione una cuenta de la siguiente lista",
     "PROFILE_SETTINGS": "Ajustes del perfil",
+    "ASSISTANT_IA_WHATSAPP": "Asistente IA Whatsapp ",
     "KEYBOARD_SHORTCUTS": "Atajos de teclado",
     "APPEARANCE": "Cambiar apariencia",
     "SUPER_ADMIN_CONSOLE": "Consola de Super Admin",
@@ -315,7 +316,7 @@
     "NO_BILLING_USER": "Tu cuenta de facturación está siendo configurada. Por favor, actualiza la página e inténtalo de nuevo."
   },
   "CREATE_ACCOUNT": {
-    "NO_ACCOUNT_WARNING": "¡Oh oh! No hemos podido encontrar ninguna cuenta de \"Chatwoot\". Por favor, crea una nueva cuenta para continuar.",
+    "NO_ACCOUNT_WARNING": "¡Oh oh! No hemos podido encontrar ninguna cuenta de \"Atenty\". Por favor, crea una nueva cuenta para continuar.",
     "NEW_ACCOUNT": "Nueva cuenta",
     "SELECTOR_SUBTITLE": "Crear nueva cuenta",
     "API": {

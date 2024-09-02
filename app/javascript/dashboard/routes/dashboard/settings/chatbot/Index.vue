@@ -317,9 +317,9 @@ export default {
               input-id="newConversationAttachment"
               :size="4096 * 4096"
               :accept="allowedFileTypes"
-              :multiple
-              :drop
-              :drop-directory
+              multiple
+              drop
+              :drop-directory="false"
               :data="{
                 direct_upload_url: '/rails/active_storage/direct_uploads',
                 direct_upload: true,

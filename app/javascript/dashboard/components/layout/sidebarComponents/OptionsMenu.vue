@@ -117,7 +117,7 @@ export default {
             </a>
           </router-link>
         </WootDropdownItem>
-        <WootDropdownItem v-if="currentUser.type === 'SuperAdmin'">
+        <WootDropdownItem v-if="currentUser.role === 'administrator'">
           <router-link
             v-slot="{ href, isActive, navigate }"
             :to="`/app/accounts/${accountId}/settings/chatbot`"

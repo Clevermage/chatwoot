@@ -17,10 +17,6 @@ export default {
     NotificationBell,
   },
   props: {
-    isACustomBrandedInstance: {
-      type: Boolean,
-      default: false,
-    },
     logoSource: {
       type: String,
       default: '',
@@ -88,13 +84,6 @@ export default {
       />
     </div>
     <div class="flex flex-col items-center justify-end pb-6">
-      <PrimaryNavItem
-        v-if="!isACustomBrandedInstance"
-        icon="book-open-globe"
-        name="DOCS"
-        open-in-new-page
-        :to="helpDocsURL"
-      />
       <NotificationBell @openNotificationPanel="openNotificationPanel" />
       <AgentDetails @toggleMenu="toggleOptions" />
       <OptionsMenu

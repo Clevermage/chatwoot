@@ -127,6 +127,9 @@ export default {
       return this.isFeatureEnabledonAccount(this.accountId, flag);
     },
     emitSaveAutomation() {
+      if (this.automation.event_name === 'chatbot_atenty') {
+        this.automation.conditions[0].values = 'x';
+      }
       this.errors = validateAutomation(this.automation);
       if (Object.keys(this.errors).length === 0) {
         const automation = generateAutomationPayload(this.automation);
@@ -150,7 +153,7 @@ export default {
           :error="errors.name ? $t('AUTOMATION.ADD.FORM.NAME.ERROR') : ''"
           :placeholder="$t('AUTOMATION.ADD.FORM.NAME.PLACEHOLDER')"
         />
-        <woot-input
+        <textarea
           v-model="automation.description"
           :label="$t('AUTOMATION.ADD.FORM.DESC.LABEL')"
           type="text"
@@ -188,7 +191,7 @@ export default {
           </p>
         </div>
         <!-- // Conditions Start -->
-        <section>
+        <section v-show="automation.event_name !== 'chatbot_atenty'">
           <label>
             {{ $t('AUTOMATION.ADD.FORM.CONDITIONS.LABEL') }}
           </label>
@@ -231,11 +234,6 @@ export default {
                   automation,
                   automation.conditions[i].attribute_key
                 )
-              "
-              :error-message="
-                errors[`condition_${i}`]
-                  ? $t(`AUTOMATION.ERRORS.${errors[`condition_${i}`]}`)
-                  : ''
               "
               @resetFilter="
                 resetFilter(

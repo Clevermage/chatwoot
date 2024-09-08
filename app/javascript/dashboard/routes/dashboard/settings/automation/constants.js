@@ -524,6 +524,132 @@ export const AUTOMATIONS = {
       },
     ],
   },
+  chatbot_atenty: {
+    conditions: [
+      {
+        key: 'status',
+        name: 'Status',
+        attributeI18nKey: 'STATUS',
+        inputType: 'multi_select',
+        filterOperators: OPERATOR_TYPES_1,
+      },
+      {
+        key: 'browser_language',
+        name: 'Browser Language',
+        attributeI18nKey: 'BROWSER_LANGUAGE',
+        inputType: 'search_select',
+        filterOperators: OPERATOR_TYPES_1,
+      },
+      {
+        key: 'mail_subject',
+        name: 'Email Subject',
+        attributeI18nKey: 'MAIL_SUBJECT',
+        inputType: 'plain_text',
+        filterOperators: OPERATOR_TYPES_2,
+      },
+      {
+        key: 'country_code',
+        name: 'Country',
+        attributeI18nKey: 'COUNTRY_NAME',
+        inputType: 'search_select',
+        filterOperators: OPERATOR_TYPES_1,
+      },
+      {
+        key: 'phone_number',
+        name: 'Phone Number',
+        attributeI18nKey: 'PHONE_NUMBER',
+        inputType: 'plain_text',
+        filterOperators: OPERATOR_TYPES_6,
+      },
+      {
+        key: 'referer',
+        name: 'Referrer Link',
+        attributeI18nKey: 'REFERER_LINK',
+        inputType: 'plain_text',
+        filterOperators: OPERATOR_TYPES_2,
+      },
+      {
+        key: 'email',
+        name: 'Email',
+        attributeI18nKey: 'EMAIL',
+        inputType: 'plain_text',
+        filterOperators: OPERATOR_TYPES_2,
+      },
+      {
+        key: 'inbox_id',
+        name: 'Inbox',
+        attributeI18nKey: 'INBOX',
+        inputType: 'multi_select',
+        filterOperators: OPERATOR_TYPES_1,
+      },
+      {
+        key: 'conversation_language',
+        name: 'Conversation Language',
+        attributeI18nKey: 'CONVERSATION_LANGUAGE',
+        inputType: 'multi_select',
+        filterOperators: OPERATOR_TYPES_1,
+      },
+      {
+        key: 'priority',
+        name: 'Priority',
+        attributeI18nKey: 'PRIORITY',
+        inputType: 'multi_select',
+        filterOperators: OPERATOR_TYPES_1,
+      },
+    ],
+    actions: [
+      {
+        key: 'assign_agent',
+        name: 'Assign to agent',
+        attributeI18nKey: 'ASSIGN_AGENT',
+      },
+      {
+        key: 'assign_team',
+        name: 'Assign a team',
+        attributeI18nKey: 'ASSIGN_TEAM',
+      },
+      {
+        key: 'assign_agent',
+        name: 'Assign an agent',
+        attributeI18nKey: 'ASSIGN_AGENT',
+      },
+      {
+        key: 'send_email_to_team',
+        name: 'Send an email to team',
+        attributeI18nKey: 'SEND_EMAIL_TO_TEAM',
+      },
+      {
+        key: 'send_message',
+        name: 'Send a message',
+        attributeI18nKey: 'SEND_MESSAGE',
+      },
+      {
+        key: 'send_email_transcript',
+        name: 'Send an email transcript',
+        attributeI18nKey: 'SEND_EMAIL_TRANSCRIPT',
+      },
+      {
+        key: 'mute_conversation',
+        name: 'Mute conversation',
+        attributeI18nKey: 'MUTE_CONVERSATION',
+      },
+      {
+        key: 'snooze_conversation',
+        name: 'Snooze conversation',
+        attributeI18nKey: 'MUTE_CONVERSATION',
+      },
+      {
+        key: 'send_webhook_event',
+        name: 'Send Webhook Event',
+        attributeI18nKey: 'SEND_WEBHOOK_EVENT',
+      },
+      {
+        key: 'send_attachment',
+        name: 'Send Attachment',
+        attributeI18nKey: 'SEND_ATTACHMENT',
+      },
+    ],
+  },
 };
 
 export const AUTOMATION_RULE_EVENTS = [
@@ -542,6 +668,10 @@ export const AUTOMATION_RULE_EVENTS = [
   {
     key: 'conversation_opened',
     value: 'Conversation Opened',
+  },
+  {
+    key: 'chatbot_atenty',
+    value: 'Chatbot IA Whatsapp',
   },
 ];
 
@@ -615,5 +745,10 @@ export const AUTOMATION_ACTION_TYPES = [
     key: 'add_sla',
     label: 'Add SLA',
     inputType: 'search_select',
+  },
+  {
+    key: 'save_attributes',
+    label: 'Save attributes',
+    inputType: 'multi_select',
   },
 ];

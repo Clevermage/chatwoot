@@ -95,6 +95,15 @@ export const generateConditionOptions = (options, key = 'id') => {
   });
 };
 
+export const generateAttributeOptions = (options, key = 'id') => {
+  return options.map(i => {
+    return {
+      id: i[key],
+      name: i.attribute_key,
+    };
+  });
+};
+
 // Add the "None" option to the agent list
 export const addNoneToList = agents => [
   {
@@ -109,6 +118,7 @@ export const getActionOptions = ({
   teams,
   labels,
   slaPolicies,
+  customAttributeJc,
   type,
 }) => {
   const actionsMap = {
@@ -119,6 +129,10 @@ export const getActionOptions = ({
     remove_label: generateConditionOptions(labels, 'title'),
     change_priority: PRIORITY_CONDITION_VALUES,
     add_sla: slaPolicies,
+    save_attributes: generateAttributeOptions(
+      customAttributeJc,
+      'attribute_key'
+    ),
   };
   return actionsMap[type];
 };
@@ -282,6 +296,7 @@ export const getInputType = (
   key
 ) => {
   const customAttribute = isACustomAttribute(allCustomAttributes, key);
+
   if (customAttribute) {
     return getCustomAttributeInputType(customAttribute.attribute_display_type);
   }

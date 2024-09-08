@@ -32,6 +32,7 @@ export function useAutomation() {
   const labels = useMapGetter('labels/getLabels');
   const teams = useMapGetter('teams/getTeams');
   const slaPolicies = useMapGetter('sla/getSLA');
+  const customAttributeJc = useMapGetter('attributes/getAttributes');
 
   const booleanFilterOptions = computed(() => [
     { id: true, name: t('FILTER.ATTRIBUTE_LABELS.TRUE') },
@@ -207,6 +208,7 @@ export function useAutomation() {
       labels: labels.value,
       teams: teams.value,
       slaPolicies: slaPolicies.value,
+      customAttributeJc: customAttributeJc.value,
       languages,
       type,
     });
@@ -320,6 +322,9 @@ export function useAutomation() {
       ...manifestedCustomAttributes
     );
     automationTypes.conversation_opened.conditions.push(
+      ...manifestedCustomAttributes
+    );
+    automationTypes.chatbot_atenty.conditions.push(
       ...manifestedCustomAttributes
     );
   };

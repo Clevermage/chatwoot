@@ -41,7 +41,7 @@ export const actions = {
     commit(types.SET_CHAT_BOT_FUNCTION_UI_FLAG, { isFetching: true });
     try {
       const response = await ChatbotFunctionAPI.getChatbots();
-      commit(types.SET_CHAT_BOT_FUNCTIONS_CHATBOTS, response.data);
+      // commit(types.SET_CHAT_BOT_FUNCTIONS_CHATBOTS, response.data);
       return response.data;
     } catch (error) {
       return null;

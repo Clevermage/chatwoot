@@ -35,7 +35,7 @@ class ChatbotFunction < ApplicationRecord
     end
 
     service.update_assistant(chatbot.openai_assistant_id, {
-                               name: chatbot.name_business,
+                               name: chatbot.name,
                                instructions: chatbot.instructions,
                                tools: tools
                              })

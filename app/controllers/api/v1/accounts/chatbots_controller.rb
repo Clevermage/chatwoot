@@ -105,11 +105,10 @@ class Api::V1::Accounts::ChatbotsController < Api::V1::Accounts::BaseController
   end
 
   def permitted_params
-    params.permit(:status, :name_business, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id, files: [])
+    params.permit(:status, :name, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id, files: [])
   end
 
   def chatbot_params
-    params.require(:chatbot).permit(:status, :name_business, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id,
-                                    files: [])
+    params.require(:chatbot).permit(:status, :name, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id, files: [])
   end
 end

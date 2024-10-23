@@ -61,7 +61,7 @@ class Chatbot < ApplicationRecord
     service = OpenaiService.new(access_token)
 
     service.update_assistant(openai_assistant_id, {
-                               name: name_business,
+                               name: name,
                                instructions: instructions
                              })
   end

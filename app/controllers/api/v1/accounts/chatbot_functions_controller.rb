@@ -1,7 +1,7 @@
 require 'json'
 class Api::V1::Accounts::ChatbotFunctionsController < Api::V1::Accounts::BaseController
   before_action :check_authorization
-  before_action :chat_bot_function, except: [:index, :create, :chatbots]
+  before_action :chatbot_function, except: [:index, :create, :chatbots]
 
   def index
     @chatbot_functions = ChatbotFunction.where(account_id: [nil, Current.account.id])

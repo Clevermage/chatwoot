@@ -751,4 +751,19 @@ export const AUTOMATION_ACTION_TYPES = [
     label: 'Save attributes',
     inputType: 'multi_select',
   },
+  {
+    key: 'consult_order',
+    label: 'Consult order',
+    inputType: null,
+  },
+  {
+    key: 'contact_human',
+    label: 'Contact human',
+    inputType: null,
+  },
+  {
+    key: 'search_product',
+    label: 'Buscar y recomendar producto',
+    inputType: null,
+  },
 ];

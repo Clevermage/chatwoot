@@ -132,6 +132,9 @@ const validateSingleAction = action => {
     'snooze_conversation',
     'resolve_conversation',
     'remove_assigned_team',
+    'consult_order',
+    'contact_human',
+    'search_product',
   ];
 
   if (

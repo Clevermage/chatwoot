@@ -48,6 +48,19 @@ export const actions = {
       throw error;
     }
   },
+
+  updateDocuments: async ({ commit }, { id, ...chatBotObj }) => {
+    commit(types.SET_CHAT_BOT_UI_FLAG, { isUpdating: true });
+    try {
+      const response = await ChatbotAPI.updateDocuments(id, chatBotObj);
+      // return response.data;
+      commit(types.EDIT_CHAT_BOT, response.data);
+    } catch (error) {
+      throwErrorMessage(error);
+      throw error;
+    }
+  },
+
   deleteFile: async ({ commit }, { id, ...chatBotObj }) => {
     commit(types.SET_CHAT_BOT_UI_FLAG, { isUpdating: true });
     try {

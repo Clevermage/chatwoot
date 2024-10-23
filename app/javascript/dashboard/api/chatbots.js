@@ -29,6 +29,14 @@ class ChatbotAPI extends ApiClient {
     });
   }
 
+  updateDocuments(id, data) {
+    return axios.patch(`${this.url}/${id}/process_file`, data, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  }
+
   deleteFile(id, fileId) {
     return axios.delete(`${this.url}/${id}/destroy_file/`, {
       params: { file_id: fileId.file_id },

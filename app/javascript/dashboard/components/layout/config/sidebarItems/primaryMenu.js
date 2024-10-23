@@ -65,6 +65,13 @@ const primaryMenuItems = accountId => [
     toState: frontendURL(`accounts/${accountId}/settings`),
     toStateName: 'settings_home',
   },
+  {
+    icon: 'bot',
+    key: 'chatbot',
+    label: 'CHATBOT',
+    toState: frontendURL(`accounts/${accountId}/chatbot`),
+    toStateName: 'setting_chatbot',
+  },
 ];
 
 export default primaryMenuItems;

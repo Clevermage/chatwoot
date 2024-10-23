@@ -46,6 +46,7 @@ import webhooks from './modules/webhooks';
 import draftMessages from './modules/draftMessages';
 import SLAReports from './modules/SLAReports';
 import chatbot from './modules/chatbot';
+import chatbotFunction from './modules/chatbotFunction';
 
 const plugins = [];
 
@@ -97,6 +98,7 @@ export default new Vuex.Store({
     sla,
     slaReports: SLAReports,
     chatbot,
+    chatbotFunction,
   },
   plugins,
 });

@@ -240,3 +240,114 @@ dyte:
     },
   ]
   visible_properties: ["organization_id"]
+shopify:
+  id: shopify
+  logo: shopify.png
+  i18n_key: shopify
+  action: /shopify
+  hook_type: account
+  type: 'ecommerce'
+  allow_multiple_hooks: false
+  settings_json_schema: {
+    "type": "object",
+    "properties": {
+        "api_key": { "type": "string" },
+        "label_suggestion": { "type": "boolean" },
+      },
+    "required": ["api_key"],
+    "additionalProperties": false,
+  }
+  settings_form_schema: [
+    {
+      "label": "API Key",
+      "type": "text",
+      "name": "api_key",
+      "validation": "required",
+    },
+    {
+      "label": "Show label suggestions",
+      "type": "checkbox",
+      "name": "label_suggestion",
+      "validation": "",
+    },
+  ]
+  visible_properties: ['api_key', 'label_suggestion']
+woocommerce:
+  id: woo
+  logo: woo.png
+  i18n_key: woo
+  action: /woo
+  hook_type: account
+  allow_multiple_hooks: false
+  type: 'ecommerce'
+  settings_json_schema: {
+    "type": "object",
+    "properties": {
+        "api_key": { "type": "string" },
+        "label_suggestion": { "type": "boolean" },
+      },
+    "required": ["api_key"],
+    "additionalProperties": false,
+  }
+  settings_form_schema: [
+    {
+      "label": "API Key",
+      "type": "text",
+      "name": "api_key",
+      "validation": "required",
+    },
+    {
+      "label": "Show label suggestions",
+      "type": "checkbox",
+      "name": "label_suggestion",
+      "validation": "",
+    },
+  ]
+  visible_properties: ['api_key', 'label_suggestion']  
+magento:
+  id: magento
+  logo: magento.png
+  i18n_key: magento
+  action: /magento
+  hook_type: account
+  allow_multiple_hooks: false
+  type: 'ecommerce'
+  settings_json_schema: {
+    "type": "object",
+    "properties": {
+        "url_site": { "type": "string" },
+        "user": { "type": "string" },
+        "password": { "type": "string" },
+        "query": { "type": "string" }
+      },
+    "required": ["url_site","user", "password"],
+    "additionalProperties": false,
+  }
+  settings_form_schema: [
+    {
+      "label": "URL site",
+      "type": "text",
+      "name": "url_site",
+      "validation": "required",
+    },
+    {
+      "label": "User",
+      "type": "text",
+      "name": "user",
+      "validation": "required",
+    },
+    {
+      "label": "Password",
+      "type": "text",
+      "name": "password",
+      "validation": "required",
+    },
+    {
+      "label": "Customize product query in GraphQL",
+      "type": "textarea",
+      "name": "query",
+      "validation": "",
+    },
+
+  ]
+  visible_properties: ['api_key', 'user', 'password', 'query']

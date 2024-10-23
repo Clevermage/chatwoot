@@ -215,6 +215,15 @@ es:
     captain:
       name: "Capitán"
       description: "Captain es un asistente nativo de inteligencia artificial diseñado para tu producto y entrenado en la base de conocimientos de tu empresa. Responde como un humano y resuelve eficazmente las consultas de los clientes. Configúralo fácilmente para tus buzones de entrada."
+    shopify:
+      name: "Shopify"
+      description: "Integra Shopify es una plataforma de comercio electrónico que permite a empresas crear, personalizar y gestionar tiendas en línea para vender productos y servicios fácilmente."      
+    woo:
+      name: "Woocommerce"
+      description: "Integra WooCommerce es un plugin de WordPress que convierte sitios web en tiendas en línea, permitiendo a los usuarios vender productos y servicios con gran flexibilidad, personalización y facilidad de uso, especialmente para pequeñas y medianas empresas."   
+    magento:
+      name: "Magento"
+      description: "Integra Magento es una plataforma de comercio electrónico de código abierto que ofrece herramientas avanzadas para crear, personalizar y gestionar tiendas en línea, ideal para negocios con necesidades complejas y personalización a gran escala."         
   public_portal:
     search:
       search_placeholder: Buscar artículo por título o cuerpo...

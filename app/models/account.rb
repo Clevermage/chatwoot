@@ -76,6 +76,7 @@ class Account < ApplicationRecord
   has_many :whatsapp_channels, dependent: :destroy_async, class_name: '::Channel::Whatsapp'
   has_many :working_hours, dependent: :destroy_async
   has_many :chatbots, dependent: :destroy_async
+  has_many :chatbot_functions, dependent: :destroy_async
 
   has_one_attached :contacts_export
 
@@ -84,6 +85,7 @@ class Account < ApplicationRecord
 
   before_validation :validate_limit_keys
   after_create_commit :notify_creation
+  after_create :create_default_chatbot
   after_destroy :remove_account_sequences
 
   def agents
@@ -148,6 +150,11 @@ class Account < ApplicationRecord
   def remove_account_sequences
     ActiveRecord::Base.connection.exec_query("drop sequence IF EXISTS camp_dpid_seq_#{id}")
     ActiveRecord::Base.connection.exec_query("drop sequence IF EXISTS conv_dpid_seq_#{id}")
+  end
+
+  def create_default_chatbot
+    ActiveRecord::Base.connection.reset_pk_sequence!('chatbots')
+    chatbots.find_or_create_by(name_business: name, status: false, type_chatbot_id: 1)
   end
 end
 

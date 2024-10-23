@@ -174,6 +174,7 @@ gem 'neighbor'
 gem 'pgvector'
 # Convert Website HTML to Markdown
 gem 'reverse_markdown'
+gem "ruby-openai"
 
 ### Gems required only in specific deployment environments ###
 ##############################################################
@@ -238,4 +239,5 @@ group :development, :test do
   gem 'simplecov', '0.17.1', require: false
   gem 'spring'
   gem 'spring-watcher-listen'
+  gem 'ruby-ray'
 end

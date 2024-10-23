@@ -269,6 +269,13 @@ Rails.application.routes.draw do
           resources :chatbots, only: [:index, :show, :update, :create, :destroy] do
             member do
               delete :destroy_file
+              patch  :process_file
+            end
+          end
+
+          resources :chatbot_functions, only: [:index, :show, :update, :create, :destroy] do
+            collection do
+              get :chatbots
             end
           end
         end

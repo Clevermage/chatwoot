@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       showDeleteConfirmationPopup: false,
-      imageExists: false,
+      imageExists: '',
       selectedResponse: {},
       loading: {},
       locale: 'es',
@@ -37,7 +37,8 @@ export default {
       meta_number_id: '',
       meta_verify_token: '',
       meta_version: '',
-      status_chatbot: 'No activo',
+      status_chatbot: '',
+      status_scanqr: '',
     };
   },
   validations: {
@@ -106,7 +107,6 @@ export default {
   },
   mounted() {
     this.initializeAccount();
-    this.checkQRImage();
   },
   methods: {
     async initializeAccount() {
@@ -124,6 +124,7 @@ export default {
           meta_number_id,
           meta_verify_token,
           meta_version,
+          status_scanqr,
         } = await this.$store.dispatch('chatbot/get');
 
         this.id = id;
@@ -138,6 +139,10 @@ export default {
         this.meta_number_id = meta_number_id;
         this.meta_verify_token = meta_verify_token;
         this.meta_version = meta_version;
+        this.status_scanqr = status_scanqr;
+        if (this.type_chatbot_provider_id === 2) {
+          this.checkQRImage();
+        }
       } catch (error) {
         useAlert(this.$t('GENERAL_SETTINGS.FORM.ERROR'));
       }
@@ -146,20 +151,24 @@ export default {
     async checkQRImage() {
       try {
         const response = await axios.get(this.qr, {
-          responseType: 'blob', // Especifica que esperas un blob (archivo binario)
+          responseType: 'blob',
         });
 
         if (response.status === 200) {
-          // Si la respuesta es 200, la imagen existe
           this.imageExists = true;
+          if (this.status_scanqr) {
+            this.status_chatbot = 'Activo';
+          } else {
+            this.status_chatbot =
+              'Se requiere escanear el código QR desde la APP de WhatsApp';
+          }
         } else {
           this.imageExists = false;
+          this.status_chatbot = 'No Activo';
         }
       } catch (err) {
-        // Si hay un error (por ejemplo, 404), la imagen no existe
         this.imageExists = false;
-      } finally {
-        this.imageExists = false;
+        this.status_chatbot = 'No Activo';
       }
     },
 
@@ -279,25 +288,29 @@ export default {
 
           <div
             v-if="type_chatbot_provider_id === 2"
-            class="flex items-center justify-between w-full gap-2 p-4 border border-solid border-ash-200 rounded-xl"
+            class="flex w-full color-custom p-[15px]"
           >
-            <span class="text-black">{{
-              $t('CHATBOT_SETTINGS.STATUS_CHATBOT')
-            }}</span>
-            <fluent-icon
-              icon="checkmark-circle"
-              type="solid"
-              class="absolute text-woot-500 dark:text-woot-500 top-2 right-2"
-            />
-            <span
-              :class="{ 'text-green': imageExists, 'text-red': !imageExists }"
-            >
-              {{ status_chatbot }}
-            </span>
-          </div>
+            <div class="w-1/2 flex items-start">
+              <p class="text-sm">
+                <b>{{ $t('CHATBOT_SETTINGS.STATUS_CHATBOT') }}</b>
+                <span
+                  :class="{
+                    'text-green': imageExists,
+                    'text-red': !imageExists && status_scanqr,
+                    'text-yellow': !status_scanqr,
+                  }"
+                >
+                  <b>{{ status_chatbot }}</b>
+                </span>
+              </p>
+            </div>
 
-          <div v-if="imageExists">
-            <img :src="qr" class="chatbot-qr" />
+            <div
+              v-if="imageExists"
+              class="w-1/2 flex items-center justify-center"
+            >
+              <img :src="qr" class="chatbot-qr" />
+            </div>
           </div>
         </div>
       </div>
@@ -380,5 +393,13 @@ export default {
 
 .text-black {
   color: black;
+}
+
+.text-yellow {
+  color: cornflowerblue;
+}
+
+.color-custom {
+  background-color: #f2f3f5;
 }
 </style>

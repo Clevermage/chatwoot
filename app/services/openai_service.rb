@@ -13,7 +13,8 @@ class OpenaiService
     @options = {
       headers: {
         'Content-Type' => 'application/json',
-        'Authorization' => "Bearer #{access_token}"
+        'Authorization' => "Bearer #{access_token}",
+        'OpenAI-Beta' => 'assistants=v2'
       }
     }
   end
@@ -49,7 +50,22 @@ class OpenaiService
     response = self.class.delete("/v1/files/#{file_id}", @options)
     if response.success?
       response.parsed_response # Devuelve el cuerpo de la respuesta parseado
-      ray('RESPONSE SUSCC', response)
+    else
+      Rails.logger.error 'error servicio'
+    end
+  end
+
+  def assign_file_to_vector_store(vector_id, file_id)
+    body = {
+      file_id: file_id
+    }.to_json
+
+    options = @options.merge(body: body)
+
+    response = self.class.post("/v1/vector_stores/#{vector_id}/files", options)
+
+    if response.success?
+      response.parsed_response # Devuelve el cuerpo de la respuesta parseado
     else
       Rails.logger.error 'error servicio'
     end

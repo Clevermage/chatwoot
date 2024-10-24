@@ -1,7 +1,7 @@
 {
     "CHATBOT_SETTINGS": {
         "TITLE": "Configuración chatbot",
-        "STATUS_CHATBOT": "Status chatbot",
+        "STATUS_CHATBOT": "Status chatbot:",
         "FORM_GENERAL_SECTION_TITLE": "Ajustes generales Chatbot",
         "FORM_KNOWLEDGE_SECTION_TITLE": "Base de conocimiento",
         "FORM_STATUS_LABEL": "Activar / Desactivar Chatbot",

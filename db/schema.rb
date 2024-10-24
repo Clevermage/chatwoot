@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_22_145408) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_23_182614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -431,6 +431,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_22_145408) do
     t.string "meta_verify_token"
     t.string "meta_version"
     t.bigint "type_chatbot_provider_id"
+    t.boolean "status_scanqr"
     t.index ["account_id"], name: "index_chatbots_on_account_id"
     t.index ["type_chatbot_id"], name: "index_chatbots_on_type_chatbot_id"
     t.index ["type_chatbot_provider_id"], name: "index_chatbots_on_type_chatbot_provider_id"

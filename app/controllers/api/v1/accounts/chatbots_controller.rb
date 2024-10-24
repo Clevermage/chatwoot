@@ -25,26 +25,8 @@ class Api::V1::Accounts::ChatbotsController < Api::V1::Accounts::BaseController
   def create; end
 
   def update
-    if @chat_bot.update(permitted_params.except(:files))
-      # Adicional: Añade los archivos solo si existen en los parámetros
-      params[:files]&.each do |file|
-        file_io = File.open(file)
-        content_type = Marcel::MimeType.for(file_io)
-
-        # sube el archivo a openai
-        response = @chat_bot.openai_upload_file(file)
-        sleep 1
-        id_file_openai = response['id']
-
-        @chat_bot.files.attach(
-          io: file_io, # Archivo que deseas adjuntar
-          filename: file.original_filename, # Nombre del archivo
-          content_type: content_type, # Tipo de contenido del archivo
-          metadata: { openai_file_id: id_file_openai } # Agregar el `openai_file_id` a los metadato
-        )
-
-        file_io.close
-      end
+    if update_chatbot
+      attach_files if params[:files].present?
       render json: @chat_bot
     else
       render json: @chat_bot.errors, status: :unprocessable_entity
@@ -67,27 +49,9 @@ class Api::V1::Accounts::ChatbotsController < Api::V1::Accounts::BaseController
   def destroy; end
 
   def process_file
-    if @chat_bot.update(permitted_params.except(:files))
-
-      params[:files]&.each do |file|
-        file_io = File.open(file)
-        content_type = Marcel::MimeType.for(file_io)
-
-        # sube el archivo a openai
-        response = @chat_bot.openai_upload_file(file)
-        sleep 1
-        id_file_openai = response['id']
-
-        @chat_bot.files.attach(
-          io: file_io, # Archivo que deseas adjuntar
-          filename: file.original_filename, # Nombre del archivo
-          content_type: content_type, # Tipo de contenido del archivo
-          metadata: { openai_file_id: id_file_openai } # Agregar el `openai_file_id` a los metadato
-        )
-        file_io.close
-      end
+    if update_chatbot
+      attach_files if params[:files].present?
       render json: @chat_bot
-
     else
       render json: @chat_bot.errors, status: :unprocessable_entity
     end
@@ -105,10 +69,46 @@ class Api::V1::Accounts::ChatbotsController < Api::V1::Accounts::BaseController
   end
 
   def permitted_params
-    params.permit(:status, :name, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id, files: [])
+    params.permit(:status, :name, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id, :status_scanqr, files: [])
   end
 
   def chatbot_params
-    params.require(:chatbot).permit(:status, :name, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id, files: [])
+    params.require(:chatbot).permit(:status, :name, :instructions, :qr, :email_business, :phone, :address, :email_notify, :type_chatbot_id,
+                                    :status_scanqr, files: [])
+  end
+
+  # Actualiza el chatbot con los parámetros permitidos, excluyendo los archivos
+  def update_chatbot
+    @chat_bot.update(permitted_params.except(:files))
+  end
+
+  # Recorre los archivos y los sube a OpenAI, luego los adjunta al chatbot
+  def attach_files
+    params[:files].each do |file|
+      id_file_openai = upload_file_to_openai(file)
+      attach_file_to_chatbot(file, id_file_openai)
+      @chat_bot.assign_file_to_vector_store(id_file_openai)
+    end
+  end
+
+  # Sube el archivo a OpenAI y devuelve el ID del archivo subido
+  def upload_file_to_openai(file)
+    response = @chat_bot.openai_upload_file(file)
+    sleep 1 # Podrías mover esta espera fuera de este método si es necesario
+    response['id']
+  end
+
+  # Adjunta el archivo al chatbot con su metadata de OpenAI
+  def attach_file_to_chatbot(file, openai_file_id)
+    file_io = File.open(file)
+    content_type = Marcel::MimeType.for(file_io)
+
+    @chat_bot.files.attach(
+      io: file_io,
+      filename: file.original_filename,
+      content_type: content_type,
+      metadata: { openai_file_id: openai_file_id }
+    )
+    file_io.close
   end
 end

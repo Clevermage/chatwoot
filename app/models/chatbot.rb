@@ -19,6 +19,7 @@
 #  phone                    :string
 #  qr                       :string
 #  status                   :boolean          default(FALSE), not null
+#  status_scanqr            :boolean
 #  created_at               :datetime         not null
 #  updated_at               :datetime         not null
 #  account_id               :integer          not null
@@ -46,6 +47,12 @@ class Chatbot < ApplicationRecord
     access_token = openai_api_key
     service = OpenaiService.new(access_token)
     service.upload_file(file)
+  end
+
+  def assign_file_to_vector_store(file_id)
+    access_token = openai_api_key
+    service = OpenaiService.new(access_token)
+    service.assign_file_to_vector_store(openai_vector_store_id, file_id)
   end
 
   def openai_delete_file(file)

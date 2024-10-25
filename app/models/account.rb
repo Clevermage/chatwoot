@@ -154,7 +154,7 @@ class Account < ApplicationRecord
 
   def create_default_chatbot
     ActiveRecord::Base.connection.reset_pk_sequence!('chatbots')
-    chatbots.find_or_create_by(name_business: name, status: false, type_chatbot_id: 1)
+    chatbots.find_or_create_by(name: name, status: false, type_chatbot_id: 2)
   end
 end
 

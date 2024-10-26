@@ -9,8 +9,12 @@ import { useConfig } from 'dashboard/composables/useConfig';
 import { FEATURE_FLAGS } from '../../../../featureFlags';
 import semver from 'semver';
 import { getLanguageDirection } from 'dashboard/components/widgets/conversation/advancedFilterItems/languages';
+import Spinner from 'shared/components/Spinner.vue';
 
 export default {
+  components: {
+    Spinner,
+  },
   setup() {
     const { updateUISettings } = useUISettings();
     const { enabledLanguages } = useConfig();
@@ -38,7 +42,9 @@ export default {
       meta_verify_token: '',
       meta_version: '',
       status_chatbot: '',
+      status_chatbot_msg: '',
       status_scanqr: '',
+      loading_check: false,
     };
   },
   validations: {
@@ -150,25 +156,40 @@ export default {
 
     async checkQRImage() {
       try {
+        this.loading_check = true;
         const response = await axios.get(this.qr, {
           responseType: 'blob',
         });
 
         if (response.status === 200) {
+          this.loading_check = false;
           this.imageExists = true;
           if (this.status_scanqr) {
-            this.status_chatbot = 'Activo';
+            this.status_chatbot = 'active';
+            this.status_chatbot_msg = this.$t(
+              'CHATBOT_SETTINGS.FORM_STATUS_CHATBOT_SUCC'
+            );
           } else {
-            this.status_chatbot =
-              'Se requiere escanear el código QR desde la APP de WhatsApp';
+            this.status_chatbot = 'scan_qr';
+            this.status_chatbot_msg = this.$t(
+              'CHATBOT_SETTINGS.FORM_STATUS_CHATBOT_SCAN'
+            );
           }
         } else {
+          this.loading_check = false;
           this.imageExists = false;
-          this.status_chatbot = 'No Activo';
+          this.status_chatbot = 'fail';
+          this.status_chatbot_msg = this.$t(
+            'CHATBOT_SETTINGS.FORM_STATUS_CHATBOT_FAIL'
+          );
         }
       } catch (err) {
+        this.loading_check = false;
         this.imageExists = false;
-        this.status_chatbot = 'No Activo';
+        this.status_chatbot = 'fail';
+        this.status_chatbot_msg = this.$t(
+          'CHATBOT_SETTINGS.FORM_STATUS_CHATBOT_FAIL'
+        );
       }
     },
 
@@ -242,7 +263,6 @@ export default {
               <span class="text-sm text-ash-900">
                 {{ $t('CHATBOT_SETTINGS.FORM_STATUS_LABEL') }}
               </span>
-
               <woot-switch v-model="status" />
             </div>
           </div>
@@ -290,20 +310,26 @@ export default {
             v-if="type_chatbot_provider_id === 2"
             class="flex w-full color-custom p-[15px]"
           >
-            <div class="w-1/2 flex items-start">
+            <div v-if="loading_check">
+              <Spinner v-if="loading_check" class="ml-2" />
+              <span class="text-xs">
+                {{ $t('CHATBOT_SETTINGS.FORM_STATUS_CHATBOT_SERVICE') }}
+              </span>
+            </div>
+            <div v-if="!loading_check" class="w-1/2 flex items-start">
               <p class="text-sm">
                 <b>{{ $t('CHATBOT_SETTINGS.STATUS_CHATBOT') }}</b>
                 <span
                   :class="{
-                    'text-green': imageExists,
-                    'text-red': !imageExists && status_scanqr,
-                    'text-yellow': !status_scanqr,
+                    'text-green': status_chatbot === 'active',
+                    'text-red': status_chatbot === 'fail',
+                    'text-yellow': status_chatbot === 'scan_qr',
                   }"
-                  ><b>{{ status_chatbot }}</b>
+                >
+                  <b>{{ status_chatbot_msg }}</b>
                 </span>
               </p>
             </div>
-
             <div
               v-if="imageExists"
               class="w-1/2 flex items-center justify-center"

@@ -299,8 +299,7 @@ export default {
                     'text-red': !imageExists && status_scanqr,
                     'text-yellow': !status_scanqr,
                   }"
-                >
-                  <b>{{ status_chatbot }}</b>
+                  ><b>{{ status_chatbot }}</b>
                 </span>
               </p>
             </div>

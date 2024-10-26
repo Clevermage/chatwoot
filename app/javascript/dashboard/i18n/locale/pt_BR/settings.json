@@ -294,7 +294,14 @@
       "TEXT": "Marcar offline automaticamente",
       "INFO_TEXT": "Deixe o sistema marcar você automaticamente quando você não estiver usando o app ou o painel de controle."
     },
-    "DOCS": "Ler documentos"
+    "DOCS": "Ler documentos",
+    "CHATBOT": "Chatbot de IA do WhatsApp",
+    "CHATBOT_SETTING": "Configurações",
+    "CHATBOT_KNOWLEDGE": "Base de Conhecimento",
+    "CHATBOT_INTENSIONS": "Intenções ou Automações",
+    "CHATBOT_INTEGRATIONS": "Integrações",
+    "CHATBOT_ECOMMERCE": "eCommerce",
+    "CHATBOT_FUNCTIONS": "Funções"
   },
   "BILLING_SETTINGS": {
     "TITLE": "Cobrança",

@@ -33,6 +33,8 @@ import sla from './sla.json';
 import inbox from './inbox.json';
 import general from './general.json';
 import datePicker from './datePicker.json';
+import chatbot from './chatbot.json';
+import knowledge from './knowledge.json';
 
 export default {
   ...advancedFilters,
@@ -70,4 +72,6 @@ export default {
   ...inbox,
   ...general,
   ...datePicker,
+  ...chatbot,
+  ...knowledge,
 };

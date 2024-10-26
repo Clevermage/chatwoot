@@ -1,0 +1,111 @@
+{
+    "KNOWLEDGE_CHATBOT": {
+        "HEADER": "Knowledge Base",
+        "LOADING": "Listing documents",
+        "DESCRIPTION": "Upload key business documents to create a personalized knowledge base. Our AI will process this information to provide accurate and relevant responses to your customers. Keep your knowledge base updated to improve customer service with always current and useful information.",
+        "LEARN_MORE": "Learn about user roles",
+        "LIST": {
+            "404": "No documents associated with this account",
+            "TABLE_HEADER": [
+                "Documents"
+            ]
+        },
+        "UPLOAD_BUTTON_TEXT": "Process documents",
+        "ADD": {
+            "TITLE": "Add an agent to your team",
+            "DESC": "You can add people who will be able to handle support for your inboxes.",
+            "CANCEL_BUTTON_TEXT": "Cancel",
+            "FORM": {
+                "NAME": {
+                    "LABEL": "Agent's name",
+                    "PLACEHOLDER": "Enter the agent's name"
+                },
+                "AGENT_TYPE": {
+                    "LABEL": "Agent type",
+                    "PLACEHOLDER": "Select a type",
+                    "ERROR": "Agent type is required"
+                },
+                "EMAIL": {
+                    "LABEL": "Email address",
+                    "PLACEHOLDER": "Please enter the agent's email address"
+                },
+                "SUBMIT": "Add agent"
+            },
+            "API": {
+                "SUCCESS_MESSAGE": "Documents processed successfully.",
+                "EXIST_MESSAGE": "The agent's email is already in use, please try another email address",
+                "ERROR_MESSAGE": "Failed to connect to the server, please try again later"
+            }
+        },
+        "DELETE": {
+            "BUTTON_TEXT": "Delete",
+            "API": {
+                "SUCCESS_MESSAGE": "Agent successfully deleted",
+                "ERROR_MESSAGE": "Failed to connect to Woot server, please try again later"
+            },
+            "CONFIRM": {
+                "TITLE": "Confirm deletion",
+                "MESSAGE": "Are you sure you want to delete ",
+                "YES": "Yes, delete ",
+                "NO": "No, keep it "
+            }
+        },
+        "EDIT": {
+            "TITLE": "Edit agent",
+            "FORM": {
+                "NAME": {
+                    "LABEL": "Agent's name",
+                    "PLACEHOLDER": "Please enter the agent's name"
+                },
+                "AGENT_TYPE": {
+                    "LABEL": "Agent type",
+                    "PLACEHOLDER": "Please select a role",
+                    "ERROR": "Agent type is required"
+                },
+                "EMAIL": {
+                    "LABEL": "Email address",
+                    "PLACEHOLDER": "Please enter the agent's email address"
+                },
+                "AGENT_AVAILABILITY": {
+                    "LABEL": "Availability",
+                    "PLACEHOLDER": "Please select an availability status",
+                    "ERROR": "Availability is required"
+                },
+                "SUBMIT": "Edit agent"
+            },
+            "BUTTON_TEXT": "Edit",
+            "CANCEL_BUTTON_TEXT": "Cancel",
+            "API": {
+                "SUCCESS_MESSAGE": "Agent updated successfully",
+                "ERROR_MESSAGE": "Failed to connect to Woot server, please try again later"
+            },
+            "PASSWORD_RESET": {
+                "ADMIN_RESET_BUTTON": "Reset password",
+                "ADMIN_SUCCESS_MESSAGE": "An email with password reset instructions has been sent to the agent",
+                "SUCCESS_MESSAGE": "Agent password reset successfully",
+                "ERROR_MESSAGE": "Failed to connect to Woot server, please try again later"
+            }
+        },
+        "SEARCH": {
+            "NO_RESULTS": "No results found."
+        },
+        "MULTI_SELECTOR": {
+            "PLACEHOLDER": "None",
+            "TITLE": {
+                "AGENT": "Select agent",
+                "TEAM": "Select team"
+            },
+            "SEARCH": {
+                "NO_RESULTS": {
+                    "AGENT": "No agents found",
+                    "TEAM": "No teams found"
+                },
+                "PLACEHOLDER": {
+                    "AGENT": "Search agents",
+                    "TEAM": "Search teams",
+                    "INPUT": "Search by agents"
+                }
+            }
+        }
+    }
+}

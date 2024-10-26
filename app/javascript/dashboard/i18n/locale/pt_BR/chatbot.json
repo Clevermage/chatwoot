@@ -1,0 +1,97 @@
+{
+    "CHATBOT_SETTINGS": {
+        "TITLE": "Configurações do Chatbot",
+        "STATUS_CHATBOT": "Status do Chatbot:",
+        "FORM_GENERAL_SECTION_TITLE": "Configurações Gerais do Chatbot",
+        "FORM_KNOWLEDGE_SECTION_TITLE": "Base de Conhecimento",
+        "FORM_STATUS_LABEL": "Ativar / Desativar Chatbot",
+        "FORM_NAME_BUSINESS_LABEL": "Nome",
+        "FORM_NAME_BUSINESS_PLACEHOLDER": "Nome",
+        "FORM_PROMPT_LABEL": "Instruções",
+        "FORM_PROMPT_PLACEHOLDER": "Instruções",
+        "FORM_EMAIL_LABEL": "Email",
+        "FORM_EMAIL_NOTIFY": "Email",
+        "FORM_EMAIL_PLACEHOLDER": "Email para notificações",
+        "FORM_QR_PLACEHOLDER": "Vincular chatbot com o WhatsApp",
+        "FORM_META_SECTION_TITLE": "Configuração Meta",
+        "FORM_META_JWT_TOKEN": "Token Meta",
+        "FORM_META_NUMBER_ID": "ID do Número",
+        "FORM_META_VERIFY_TOKEN": "Token de Verificação",
+        "FORM_META_VERSION": "Versão",
+        "FORM_STATUS_CHATBOT_SUCC": "Ativo",
+        "FORM_STATUS_CHATBOT_FAIL": "Inativo",
+        "FORM_STATUS_CHATBOT_SCAN": "É necessário escanear o código QR do aplicativo WhatsApp",
+        "FORM_STATUS_CHATBOT_SERVICE": "Verificando disponibilidade do bot...",
+        "DOCUMENT": {
+            "TITLE": "Documentos",
+            "SUBTITLE_UPLOAD": "Carregar documentos",
+            "BUTTON_UPLOAD": "Carregar arquivo",
+            "PARAGRAPH": "Aqui você pode carregar documentos para ajudar seu chatbot a responder melhor às consultas. Por exemplo, carregue um arquivo txt com perguntas frequentes, horários, endereços, telefones, ou um arquivo csv do seu catálogo de produtos ou serviços. Esses documentos ajudarão seu chatbot a estar bem informado e preparado para interagir com seus clientes.",
+            "SUBTITLE_LOAD": "Documentos carregados",
+            "ICON_DELETE_FILE": "Excluir arquivo"
+        },
+        "INTEGRATION": {
+            "TITLE": "Integrações",
+            "DESCRIPTION": "Você pode conectar sua loja online com plataformas de ecommerce. Essas integrações permitem que o chatbot acesse e gerencie informações de produtos, pedidos e clientes de forma automatizada, melhorando o atendimento ao cliente e facilitando as operações da loja."
+        },
+        "FUNCTIONS": {
+            "TITLE": "Funções",
+            "HEADER": "Funções",
+            "HEADER_BTN_TXT": "Adicionar função",
+            "LOADING": "Obtendo função",
+            "DESCRIPTION": "Funções disponíveis para seu chatbot",
+            "LEARN_MORE": "Saiba mais",
+            "SEARCH_404": "Nenhum item corresponde a essa consulta",
+            "LIST": {
+                "404": "Nenhuma função disponível nesta conta.",
+                "TITLE": "Gerenciar funções",
+                "DESC": "Funções para chatbots",
+                "TABLE_HEADER": [
+                    "Nome"
+                ]
+            },
+            "EDIT": {
+                "TITLE": "Editar função",
+                "API": {
+                    "SUCCESS_MESSAGE": "Função atualizada com sucesso",
+                    "ERROR_MESSAGE": "Ocorreu um erro, por favor tente novamente"
+                }
+            },
+            "DELETE": {
+                "BUTTON_TEXT": "Excluir",
+                "API": {
+                    "SUCCESS_MESSAGE": "Função atualizada com sucesso",
+                    "ERROR_MESSAGE": "Ocorreu um erro, por favor tente novamente"
+                },
+                "CONFIRM": {
+                    "TITLE": "Confirmar exclusão",
+                    "MESSAGE": "Tem certeza de que deseja excluir ",
+                    "YES": "Sim, excluir ",
+                    "NO": "Não, manter "
+                }
+            },
+            "FORM": {
+                "NAME": {
+                    "LABEL": "Nome da função",
+                    "PLACEHOLDER": "Nome da função",
+                    "REQUIRED_ERROR": "Nome da função é obrigatório",
+                    "MINIMUM_LENGTH_ERROR": "O comprimento mínimo é de 2 caracteres",
+                    "VALID_ERROR": "Apenas letras, números, hífen e sublinhado são permitidos"
+                },
+                "STATUS": "Ativar/Desativar",
+                "CHATBOT": {
+                    "LABEL": "Selecionar chatbot",
+                    "PLACEHOLDER": "Selecionar chatbot"
+                },
+                "CODE_FUNCTION": {
+                    "LABEL": "Definição",
+                    "PLACEHOLDER": "Definição"
+                },
+                "EDIT": "Editar",
+                "CREATE": "Criar",
+                "DELETE": "Excluir",
+                "CANCEL": "Cancelar"
+            }
+        }
+    }
+}

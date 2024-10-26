@@ -20,6 +20,8 @@
         "FORM_META_VERSION": "Version",
         "FORM_STATUS_CHATBOT_SUCC": "Activo",
         "FORM_STATUS_CHATBOT_FAIL": "No activo",
+        "FORM_STATUS_CHATBOT_SCAN": "Se requiere escanear el código QR desde la APP de WhatsApp",
+        "FORM_STATUS_CHATBOT_SERVICE": "Verificando estado del bot...",
         "DOCUMENT": {
             "TITLE": "Documentos",
             "SUBTITLE_UPLOAD": "Subir documentos",

@@ -294,7 +294,14 @@
       "TEXT": "Mark offline automatically",
       "INFO_TEXT": "Let the system automatically mark you offline when you aren't using the app or dashboard."
     },
-    "DOCS": "Read docs"
+    "DOCS": "Read docs",
+    "CHATBOT": "WhatsApp AI Chatbot",
+    "CHATBOT_SETTING": "Settings",
+    "CHATBOT_KNOWLEDGE": "Knowledge Base",
+    "CHATBOT_INTENSIONS": "Intents or Automations",
+    "CHATBOT_INTEGRATIONS": "Integrations",
+    "CHATBOT_ECOMMERCE": "eCommerce",
+    "CHATBOT_FUNCTIONS": "Functions"
   },
   "BILLING_SETTINGS": {
     "TITLE": "Billing",

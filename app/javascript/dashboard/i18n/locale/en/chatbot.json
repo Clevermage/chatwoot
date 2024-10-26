@@ -1,0 +1,97 @@
+{
+    "CHATBOT_SETTINGS": {
+        "TITLE": "Chatbot Settings",
+        "STATUS_CHATBOT": "Chatbot Status:",
+        "FORM_GENERAL_SECTION_TITLE": "General Chatbot Settings",
+        "FORM_KNOWLEDGE_SECTION_TITLE": "Knowledge Base",
+        "FORM_STATUS_LABEL": "Activate / Deactivate Chatbot",
+        "FORM_NAME_BUSINESS_LABEL": "Name",
+        "FORM_NAME_BUSINESS_PLACEHOLDER": "Name",
+        "FORM_PROMPT_LABEL": "Instructions",
+        "FORM_PROMPT_PLACEHOLDER": "Instructions",
+        "FORM_EMAIL_LABEL": "Email",
+        "FORM_EMAIL_NOTIFY": "Email",
+        "FORM_EMAIL_PLACEHOLDER": "Email for notifications",
+        "FORM_QR_PLACEHOLDER": "Link chatbot with WhatsApp",
+        "FORM_META_SECTION_TITLE": "Meta Settings",
+        "FORM_META_JWT_TOKEN": "Meta Token",
+        "FORM_META_NUMBER_ID": "Number ID",
+        "FORM_META_VERIFY_TOKEN": "Verify Token",
+        "FORM_META_VERSION": "Version",
+        "FORM_STATUS_CHATBOT_SUCC": "Active",
+        "FORM_STATUS_CHATBOT_FAIL": "Inactive",
+        "FORM_STATUS_CHATBOT_SCAN": "QR code scan required from WhatsApp APP",
+        "FORM_STATUS_CHATBOT_SERVICE": "Verifying bot availability...",
+        "DOCUMENT": {
+            "TITLE": "Documents",
+            "SUBTITLE_UPLOAD": "Upload documents",
+            "BUTTON_UPLOAD": "Upload file",
+            "PARAGRAPH": "Here you can upload documents to help your chatbot respond better to inquiries. For example, upload a txt file with FAQs, schedules, addresses, phone numbers, or a csv file of your product or service catalog. These documents will help your chatbot be well-informed and ready to interact with your customers.",
+            "SUBTITLE_LOAD": "Uploaded documents",
+            "ICON_DELETE_FILE": "Delete file"
+        },
+        "INTEGRATION": {
+            "TITLE": "Integrations",
+            "DESCRIPTION": "You can connect your online store with ecommerce platforms. These integrations allow the chatbot to access and manage product, order, and customer information automatically, improving customer service and streamlining store operations."
+        },
+        "FUNCTIONS": {
+            "TITLE": "Functions",
+            "HEADER": "Functions",
+            "HEADER_BTN_TXT": "Add function",
+            "LOADING": "Fetching function",
+            "DESCRIPTION": "Available functions for your chatbot",
+            "LEARN_MORE": "Learn more",
+            "SEARCH_404": "No items match this query",
+            "LIST": {
+                "404": "No functions available in this account.",
+                "TITLE": "Manage functions",
+                "DESC": "Functions for chatbots",
+                "TABLE_HEADER": [
+                    "Name"
+                ]
+            },
+            "EDIT": {
+                "TITLE": "Edit function",
+                "API": {
+                    "SUCCESS_MESSAGE": "Function updated successfully",
+                    "ERROR_MESSAGE": "An error occurred, please try again"
+                }
+            },
+            "DELETE": {
+                "BUTTON_TEXT": "Delete",
+                "API": {
+                    "SUCCESS_MESSAGE": "Function updated successfully",
+                    "ERROR_MESSAGE": "An error occurred, please try again"
+                },
+                "CONFIRM": {
+                    "TITLE": "Confirm deletion",
+                    "MESSAGE": "Are you sure you want to delete ",
+                    "YES": "Yes, delete ",
+                    "NO": "No, keep it "
+                }
+            },
+            "FORM": {
+                "NAME": {
+                    "LABEL": "Function name",
+                    "PLACEHOLDER": "Function name",
+                    "REQUIRED_ERROR": "Function name is required",
+                    "MINIMUM_LENGTH_ERROR": "Minimum length is 2 characters",
+                    "VALID_ERROR": "Only letters, numbers, hyphens, and underscores are allowed"
+                },
+                "STATUS": "Activate/Deactivate",
+                "CHATBOT": {
+                    "LABEL": "Select chatbot",
+                    "PLACEHOLDER": "Select chatbot"
+                },
+                "CODE_FUNCTION": {
+                    "LABEL": "Definition",
+                    "PLACEHOLDER": "Definition"
+                },
+                "EDIT": "Edit",
+                "CREATE": "Create",
+                "DELETE": "Delete",
+                "CANCEL": "Cancel"
+            }
+        }
+    }
+}

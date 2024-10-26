@@ -1,0 +1,111 @@
+{
+    "KNOWLEDGE_CHATBOT": {
+        "HEADER": "Base de Conhecimento",
+        "LOADING": "Listando documentos",
+        "DESCRIPTION": "Carregue documentos essenciais do seu negócio para criar uma base de conhecimento personalizada. Nossa IA processará essa informação para fornecer respostas precisas e relevantes aos seus clientes. Mantenha sua base de conhecimento atualizada para melhorar o atendimento ao cliente com informações sempre atuais e úteis.",
+        "LEARN_MORE": "Saiba mais sobre as funções do usuário",
+        "LIST": {
+            "404": "Nenhum documento associado a esta conta",
+            "TABLE_HEADER": [
+                "Documentos"
+            ]
+        },
+        "UPLOAD_BUTTON_TEXT": "Processar documentos",
+        "ADD": {
+            "TITLE": "Adicionar agente à sua equipe",
+            "DESC": "Você pode adicionar pessoas que poderão gerenciar o suporte das suas caixas de entrada.",
+            "CANCEL_BUTTON_TEXT": "Cancelar",
+            "FORM": {
+                "NAME": {
+                    "LABEL": "Nome do agente",
+                    "PLACEHOLDER": "Insira o nome do agente"
+                },
+                "AGENT_TYPE": {
+                    "LABEL": "Tipo de agente",
+                    "PLACEHOLDER": "Selecione um tipo",
+                    "ERROR": "O tipo de agente é obrigatório"
+                },
+                "EMAIL": {
+                    "LABEL": "Endereço de e-mail",
+                    "PLACEHOLDER": "Por favor, insira o e-mail do agente"
+                },
+                "SUBMIT": "Adicionar agente"
+            },
+            "API": {
+                "SUCCESS_MESSAGE": "Documentos processados com sucesso.",
+                "EXIST_MESSAGE": "O e-mail do agente já está em uso, tente outro endereço de e-mail",
+                "ERROR_MESSAGE": "Falha ao conectar ao servidor, por favor tente novamente mais tarde"
+            }
+        },
+        "DELETE": {
+            "BUTTON_TEXT": "Excluir",
+            "API": {
+                "SUCCESS_MESSAGE": "Agente excluído com sucesso",
+                "ERROR_MESSAGE": "Falha ao conectar ao servidor Woot, por favor tente novamente mais tarde"
+            },
+            "CONFIRM": {
+                "TITLE": "Confirmar exclusão",
+                "MESSAGE": "Tem certeza de que deseja excluir ",
+                "YES": "Sim, excluir ",
+                "NO": "Não, manter "
+            }
+        },
+        "EDIT": {
+            "TITLE": "Editar agente",
+            "FORM": {
+                "NAME": {
+                    "LABEL": "Nome do agente",
+                    "PLACEHOLDER": "Por favor, insira o nome do agente"
+                },
+                "AGENT_TYPE": {
+                    "LABEL": "Tipo de agente",
+                    "PLACEHOLDER": "Por favor, selecione uma função",
+                    "ERROR": "O tipo de agente é obrigatório"
+                },
+                "EMAIL": {
+                    "LABEL": "Endereço de e-mail",
+                    "PLACEHOLDER": "Por favor, insira o e-mail do agente"
+                },
+                "AGENT_AVAILABILITY": {
+                    "LABEL": "Disponibilidade",
+                    "PLACEHOLDER": "Por favor, selecione um status de disponibilidade",
+                    "ERROR": "A disponibilidade é necessária"
+                },
+                "SUBMIT": "Editar agente"
+            },
+            "BUTTON_TEXT": "Editar",
+            "CANCEL_BUTTON_TEXT": "Cancelar",
+            "API": {
+                "SUCCESS_MESSAGE": "Agente atualizado com sucesso",
+                "ERROR_MESSAGE": "Falha ao conectar ao servidor Woot, por favor tente novamente mais tarde"
+            },
+            "PASSWORD_RESET": {
+                "ADMIN_RESET_BUTTON": "Redefinir senha",
+                "ADMIN_SUCCESS_MESSAGE": "Um e-mail com instruções para redefinir a senha foi enviado ao agente",
+                "SUCCESS_MESSAGE": "Senha do agente redefinida com sucesso",
+                "ERROR_MESSAGE": "Falha ao conectar ao servidor Woot, por favor tente novamente mais tarde"
+            }
+        },
+        "SEARCH": {
+            "NO_RESULTS": "Nenhum resultado encontrado."
+        },
+        "MULTI_SELECTOR": {
+            "PLACEHOLDER": "Nenhum",
+            "TITLE": {
+                "AGENT": "Selecionar agente",
+                "TEAM": "Selecionar equipe"
+            },
+            "SEARCH": {
+                "NO_RESULTS": {
+                    "AGENT": "Nenhum agente encontrado",
+                    "TEAM": "Nenhuma equipe encontrada"
+                },
+                "PLACEHOLDER": {
+                    "AGENT": "Buscar agentes",
+                    "TEAM": "Buscar equipes",
+                    "INPUT": "Buscar por agentes"
+                }
+            }
+        }
+    }
+}

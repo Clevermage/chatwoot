@@ -22,15 +22,7 @@
     "IN_A_DAY": "Biasanya membalas dalam sehari",
     "BACK_IN": "Kami akan kembali online"
   },
-  "DAY_NAMES": [
-    "Minggu",
-    "Senin",
-    "Selasa",
-    "Rabu",
-    "Kamis",
-    "Jumat",
-    "Sabtu"
-  ],
+  "DAY_NAMES": ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
   "START_CONVERSATION": "Mulai Percakapan",
   "END_CONVERSATION": "Akhiri Percakapan",
   "CONTINUE_CONVERSATION": "Lanjutkan Percakapan",
@@ -46,7 +38,7 @@
   "BUBBLE": {
     "LABEL": "Chat dengan kami"
   },
-  "POWERED_BY": "Powered by Chatwoot",
+  "POWERED_BY": "Powered by Atenty",
   "EMAIL_PLACEHOLDER": "Masukkan email Anda",
   "CHAT_PLACEHOLDER": "Ketik pesan Anda",
   "TODAY": "Hari ini",

@@ -330,7 +330,7 @@ export default {
         >
           {{ unreadCount > 9 ? '9+' : unreadCount }}
         </span>
-        <span class="font-bold text-blue-700 text-xs">
+        <span class="color-ticket font-bold text-xxs">
           {{ $t('CONVERSATION.HEADER.TICKET') }}
           {{ chat.id }}
         </span>
@@ -370,6 +370,10 @@ export default {
 
 <style lang="scss" scoped>
 .conversation {
+  .color-ticket {
+    color: indigo;
+  }
+
   &.unread-chat {
     .unread {
       @apply block;

@@ -68,7 +68,7 @@ const primaryMenuItems = accountId => [
   {
     icon: 'bot',
     key: 'chatbot',
-    label: 'Asistentes IA',
+    label: 'AGENTEIA',
     toState: frontendURL(`accounts/${accountId}/chatbot`),
     toStateName: 'setting_chatbot',
   },

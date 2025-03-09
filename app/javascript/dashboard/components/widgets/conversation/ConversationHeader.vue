@@ -192,7 +192,7 @@ export default {
             >
               {{ contactPanelToggleText }}
             </woot-button>
-            <span class="text-xs font-bold">
+            <span class="text-xs color-ticket font-bold">
               {{ $t('CONVERSATION.HEADER.TICKET') }}
               {{ chat.id }}
             </span>
@@ -216,6 +216,10 @@ export default {
 
 <style lang="scss" scoped>
 .conversation--header--actions {
+  .color-ticket {
+    color: indigo;
+  }
+
   ::v-deep .inbox--name {
     @apply m-0;
   }

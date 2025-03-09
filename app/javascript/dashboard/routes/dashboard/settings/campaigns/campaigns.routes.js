@@ -44,5 +44,23 @@ export default {
         },
       ],
     },
+    {
+      path: frontendURL('accounts/:accountId/templates'),
+      component: SettingsContent,
+      props: {
+        headerTitle: 'CAMPAIGN.TEMPLATE_WHATSAPP.HEADER',
+        icon: 'sound-source',
+      },
+      children: [
+        {
+          path: 'template_whatsapp',
+          name: 'template_whatsapp',
+          meta: {
+            permissions: ['administrator'],
+          },
+          component: Index,
+        },
+      ],
+    },
   ],
 };

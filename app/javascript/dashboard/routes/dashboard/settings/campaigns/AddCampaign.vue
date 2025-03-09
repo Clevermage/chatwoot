@@ -32,6 +32,28 @@ export default {
       scheduledAt: null,
       selectedAudience: [],
       senderList: [],
+      selectedType: null,
+      selectedTemplate: null,
+      typeCampaign: [
+        {
+          id: 1,
+          name: 'Whatsapp Business',
+        },
+        {
+          id: 2,
+          name: 'SMS',
+        },
+      ],
+      templates: [
+        {
+          id: 1,
+          name: 'new_proyect',
+        },
+        {
+          id: 2,
+          name: 'prueba_2',
+        },
+      ],
     };
   },
 
@@ -203,6 +225,19 @@ export default {
     />
     <form class="flex flex-col w-full" @submit.prevent="addCampaign">
       <div class="w-full">
+        <label>
+          {{ $t('CAMPAIGN.ADD.FORM.SENT_METHOD.LABEL') }}
+          <select v-model="selectedType">
+            <option
+              v-for="item in typeCampaign"
+              :key="item.name"
+              :value="item.id"
+            >
+              {{ item.name }}
+            </option>
+          </select>
+        </label>
+
         <woot-input
           v-model="title"
           :label="$t('CAMPAIGN.ADD.FORM.TITLE.LABEL')"
@@ -212,6 +247,15 @@ export default {
           :placeholder="$t('CAMPAIGN.ADD.FORM.TITLE.PLACEHOLDER')"
           @blur="v$.title.$touch"
         />
+
+        <label>
+          {{ $t('CAMPAIGN.ADD.FORM.TEMPLATE.LABEL') }}
+          <select v-model="selectedTemplate">
+            <option v-for="item in templates" :key="item.name" :value="item.id">
+              {{ item.name }}
+            </option>
+          </select>
+        </label>
 
         <div v-if="isOngoingType" class="editor-wrap">
           <label>

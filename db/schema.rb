@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_23_182614) do
+ActiveRecord::Schema[7.0].define(version: 2024_11_22_193045) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -200,6 +200,22 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_182614) do
     t.datetime "updated_at", null: false
     t.boolean "active", default: true, null: false
     t.index ["account_id"], name: "index_automation_rules_on_account_id"
+  end
+
+  create_table "campaign_notifications", force: :cascade do |t|
+    t.bigint "campaign_id", null: false
+    t.bigint "contact_id", null: false
+    t.string "code_cart"
+    t.string "notification_method"
+    t.datetime "sent_at"
+    t.string "status"
+    t.string "type"
+    t.text "failure_reason"
+    t.datetime "response_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_campaign_notifications_on_campaign_id"
+    t.index ["contact_id"], name: "index_campaign_notifications_on_contact_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -1060,6 +1076,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_23_182614) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "campaign_notifications", "campaigns"
+  add_foreign_key "campaign_notifications", "contacts"
   add_foreign_key "inboxes", "portals"
   create_trigger("accounts_after_insert_row_tr", :generated => true, :compatibility => 1).
       on("accounts").

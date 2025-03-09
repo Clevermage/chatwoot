@@ -145,11 +145,7 @@
       },
       "AVAILABILITY": {
         "LABEL": "Disponibilidad",
-        "STATUSES_LIST": [
-          "En línea",
-          "Ocupado",
-          "Fuera de línea"
-        ],
+        "STATUSES_LIST": ["En línea", "Ocupado", "Fuera de línea"],
         "SET_AVAILABILITY_SUCCESS": "La disponibilidad se ha establecido con éxito",
         "SET_AVAILABILITY_ERROR": "No se pudo establecer la disponibilidad, inténtelo de nuevo"
       },
@@ -270,6 +266,7 @@
     "CAMPAIGNS": "Campañas",
     "ONGOING": "En Curso",
     "ONE_OFF": "One Off",
+    "TEMPLATE_WHATSAPP": "Templates Whatsapp",
     "REPORTS_SLA": "SLA",
     "REPORTS_BOT": "Bot",
     "REPORTS_AGENT": "Agentes",

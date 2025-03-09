@@ -58,6 +58,16 @@ class Campaign < ApplicationRecord
     Sms::OneoffSmsCampaignService.new(campaign: self).perform if inbox.inbox_type == 'Sms'
   end
 
+  def abandoned_cart!
+    ray('campaña carrito abandonado')
+    Atenty::OngoingAbandonedCampaignService.new(campaign: self).perform
+  end
+
+  def whatsapp!
+    ray('campaña whatsapp')
+    Atenty::OneoffWhatsappCampaignService.new(campaign: self).perform
+  end
+
   private
 
   def set_display_id
@@ -67,7 +77,7 @@ class Campaign < ApplicationRecord
   def validate_campaign_inbox
     return unless inbox
 
-    errors.add :inbox, 'Unsupported Inbox type' unless ['Website', 'Twilio SMS', 'Sms'].include? inbox.inbox_type
+    errors.add :inbox, 'Unsupported Inbox type' unless ['Website', 'Twilio SMS', 'Sms', 'API'].include? inbox.inbox_type
   end
 
   # TO-DO we clean up with better validations when campaigns evolve into more inboxes

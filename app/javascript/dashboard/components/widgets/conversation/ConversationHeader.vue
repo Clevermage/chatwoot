@@ -192,6 +192,10 @@ export default {
             >
               {{ contactPanelToggleText }}
             </woot-button>
+            <span class="text-xs font-bold">
+              {{ $t('CONVERSATION.HEADER.TICKET') }}
+              {{ chat.id }}
+            </span>
           </div>
         </div>
       </div>

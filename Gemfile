@@ -241,3 +241,5 @@ group :development, :test do
   gem 'spring-watcher-listen'
   gem 'ruby-ray'
 end
+
+gem "shopify_api", "~> 14.6"

@@ -8,6 +8,7 @@ export const DEFAULT_CONVERSATION_SIDEBAR_ITEMS_ORDER = Object.freeze([
   { name: 'contact_attributes' },
   { name: 'previous_conversation' },
   { name: 'conversation_participants' },
+  { name: 'conversation_ecommerce' },
 ]);
 
 export const DEFAULT_CONTACT_SIDEBAR_ITEMS_ORDER = Object.freeze([

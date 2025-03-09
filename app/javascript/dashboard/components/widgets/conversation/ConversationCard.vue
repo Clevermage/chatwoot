@@ -75,6 +75,7 @@ export default {
         x: null,
         y: null,
       },
+      label_ticket: 'ticket:#',
     };
   },
   computed: {
@@ -264,6 +265,20 @@ export default {
       class="px-0 py-3 border-b group-hover:border-transparent flex-1 border-slate-50 dark:border-slate-800/75 w-[calc(100%-40px)]"
     >
       <div class="flex justify-between">
+        <span
+          :class="{
+            'bg-red-50 text-red-700 ring-red-600/10': chat.status === 'open',
+            'bg-green-50 text-green-700 ring-green-600/10':
+              chat.status === 'resolved',
+            'bg-yellow-50 text-yellow-700 ring-yellow-600/10':
+              chat.status === 'pending',
+            'bg-purple-50 text-purple-700 ring-purple-700/10':
+              chat.status === 'snoozed',
+          }"
+          class="status inline-flex items-center rounded-md px-2 py-1 text-xxs font-medium ring-1 ring-inset"
+        >
+          {{ $t(`CONVERSATION.TICKET_STATUS.${chat.status}`) }}
+        </span>
         <InboxName v-if="showInboxName" :inbox="inbox" />
         <div class="flex gap-2 ml-2 rtl:mr-2 rtl:ml-0">
           <span
@@ -315,6 +330,10 @@ export default {
         >
           {{ unreadCount > 9 ? '9+' : unreadCount }}
         </span>
+        <span class="font-bold text-blue-700 text-xs">
+          {{ $t('CONVERSATION.HEADER.TICKET') }}
+          {{ chat.id }}
+        </span>
       </div>
       <CardLabels
         :conversation-id="chat.id"
@@ -355,9 +374,11 @@ export default {
     .unread {
       @apply block;
     }
+
     .conversation--message {
       @apply font-semibold;
     }
+
     .conversation--user {
       @apply font-semibold;
     }
@@ -365,6 +386,7 @@ export default {
 
   &.compact {
     @apply pl-0;
+
     .conversation--details {
       @apply rounded-sm ml-0 pl-5 pr-2;
     }
@@ -382,9 +404,11 @@ export default {
     &::v-deep .user-thumbnail-box {
       @apply mt-8;
     }
+
     .checkbox-wrapper {
       @apply mt-8;
     }
+
     .conversation--meta {
       @apply mt-4;
     }

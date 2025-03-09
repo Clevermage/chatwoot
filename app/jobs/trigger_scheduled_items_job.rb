@@ -8,6 +8,24 @@ class TriggerScheduledItemsJob < ApplicationJob
       Campaigns::TriggerOneoffCampaignJob.perform_later(campaign)
     end
 
+    ray('Revisando campañas de carros abandonados')
+
+    # Campaign.where(campaign_type: :ongoing,
+    #           campaign_status: :active)
+    #    .where("trigger_rules->>'type' = ?", "abandoned_cart")
+    #    .find_each(batch_size: 100) do |campaign|
+    #    Campaigns::TriggerAbandonedCampaignJob.perform_later(campaign)
+    # end
+
+    ray('Revisando campañas de whatsapp')
+
+    Campaign.where(campaign_type: :one_off,
+                   campaign_status: :active)
+            .where("trigger_rules->>'type' = ?", 'whatsapp')
+            .find_each(batch_size: 100) do |campaign|
+      Campaigns::TriggerOneoffWhatsappCampaignJob.perform_later(campaign)
+    end
+
     # Job to reopen snoozed conversations
     Conversations::ReopenSnoozedConversationsJob.perform_later
 

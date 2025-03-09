@@ -11,6 +11,7 @@ import ConversationInfo from './ConversationInfo.vue';
 import CustomAttributes from './customAttributes/CustomAttributes.vue';
 import draggable from 'vuedraggable';
 import MacrosList from './Macros/List.vue';
+import ConversationEcommerce from './ConversationEcommerce.vue';
 export default {
   components: {
     AccordionItem,
@@ -22,6 +23,7 @@ export default {
     ConversationParticipant,
     Draggable: draggable,
     MacrosList,
+    ConversationEcommerce,
   },
   props: {
     conversationId: {
@@ -256,6 +258,18 @@ export default {
               <MacrosList :conversation-id="conversationId" />
             </AccordionItem>
           </woot-feature-toggle>
+          <div v-else-if="element.name === 'conversation_ecommerce'">
+            <AccordionItem
+              :title="
+                $t('CONVERSATION_SIDEBAR.ACCORDION.CONVERSATION_ECOMMERCE')
+              "
+              :is-open="isContactSidebarItemOpen('is_conv_tags_open')"
+              compact
+              @click="value => toggleSidebarUIState('is_conv_tags_open', value)"
+            >
+              <ConversationEcommerce :conversation-id="conversationId" />
+            </AccordionItem>
+          </div>
         </div>
       </transition-group>
     </Draggable>
@@ -267,10 +281,12 @@ export default {
   .contact--profile {
     @apply pb-3 border-b border-solid border-slate-75 dark:border-slate-700;
   }
+
   .conversation--actions .multiselect-wrap--small {
     .multiselect {
       @apply box-border pl-6;
     }
+
     .multiselect__element {
       span {
         @apply w-full;
